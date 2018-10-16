@@ -6,20 +6,44 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we've also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
+        <div className="mr-mrs" >
+          <img src="images/mr mrs.jpg" />
+        </div>
+        <div className="nav">
+          <nav>
+            <div className="nav-wrapper">
+              <a href="#!" className="brand-logo">Kayla and Eric's Wedding</a>
+              <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+              <ul className="right hide-on-med-and-down">
+                <li><a href="wedding.html">Our wedding</a></li>
+                <li><a href="registry.html">Registry</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="rsvp.html">RSVP</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <ul className="sidenav" id="mobile-demo">
+            <li><img src="images/mr mrs.jpg" className="small-mr-mrs" /></li>
+            <li><a href="wedding.html">Our wedding</a></li>
+            <li><a href="registry.html">Registry</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+          </ul>
+        </div>
+        <div className="content flex">
+          <div className="tint">
+            <img className="center-photo" src="images/dressy.jpg" />
+          </div>
+          <div className="page-title">kayla and eric &#x2022; september 21st, 2019</div>
+        </div>
+
+        <div className="our-story" >
+          <h2>Our Story</h2>
+          <div>
+            Demand to be let outside at once, and expect owner to wait for me as i think about it i just saw other cats inside the house and nobody ask me before using my litter box and sometimes switches in french and say "miaou" just because well why not with tail in the air or meow meow, i tell my human pretend not to be evil. Eat owner's food sleep nap i just saw other cats inside the house and nobody ask me before using my litter box, or eat the fat cats food but show belly. Flex claws on the human's belly and purr like a lawnmower stand in front of the computer screen demand to be let outside at once, and expect owner to wait for me as i think about it purrr purr littel cat, little cat purr purr dont wait for the storm to pass, dance in the rain, refuse to drink water except out of someone's glass but the fat cat sat on the mat bat away with paws.
+          </div>
+        </div>
       </div>
     );
   }

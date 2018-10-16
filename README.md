@@ -3,6 +3,7 @@
 ## Requirements
 * NPM and Node
 * Visual Studio
+* SQL Server Express
 
 ## Getting Started
 * Open a command line

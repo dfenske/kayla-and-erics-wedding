@@ -1,10 +1,25 @@
+:root {
+    --primary: #014A81;
+    --secondary: #661349;
+    --tertiary: #3F165C;
+    --light: #EDD1DF;
+}
+
 @font-face {
     font-family: "Montserrat";
     src:url("./fonts/Montserrat-Regular.ttf") format("truetype");
 }
+@font-face {
+    font-family: "Amatic SC";
+    src: url("./fonts/AmaticSC-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Tangerine";
+    src: url("./fonts/Tangerine-Regular.ttf") format("truetype");
+}
 
 html * {
-    font-family: "Montserrat";;
+    font-family: "Montserrat";
 }
 
 @media (max-width: 767px) {
@@ -13,3 +28,135 @@ html * {
         padding-top: 50px;
     }
 }
+
+
+body {
+    margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+
+.mr-mrs {
+    display: flex;
+    justify-content: center;
+}
+
+    .mr-mrs img {
+        height: 200px;
+        margin: 0 auto;
+    }
+
+.small-mr-mrs {
+    height: 200px;
+    margin: 0 auto;
+}
+
+div.nav {
+    width: 100%;
+}
+
+nav .nav-wrapper {
+    margin-top: 10px;
+    font-family: 'Amatic SC', cursive;
+    padding-left: 10px;
+    background-color: #fff;
+}
+
+.nav-wrapper .title {
+    font-size: 3em;
+}
+
+.nav-wrapper a {
+    font-size: 2em;
+    color: var(--tertiary);
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        margin-left: 75px;
+        left: 0;
+        transform: none;
+    }
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tint {
+    position: relative;
+    width: 100%;
+}
+
+    .tint:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #010000;
+        opacity: 0.25;
+        transition: all .3s linear;
+    }
+
+img.center-photo {
+    box-shadow: 0px IMAGE_HEIGHTpx rgba(255, 0, 92, 0.4) inset;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-title {
+    font-size: 72px;
+    font-family: 'Tangerine', cursive;
+    color: white;
+    position: absolute;
+    margin-top: 15%;
+}
+
+@media (max-width: 781px) {
+    .page-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 531px) {
+    .page-title {
+        font-size: 28px;
+    }
+}
+
+.our-story {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.switch {
+    margin: 20px 0;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .photos img {
+        height: 250px;
+        margin: 10px;
+    }
