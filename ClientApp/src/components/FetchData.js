@@ -5,33 +5,31 @@ export class FetchData extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true };
+    this.state = { guests: [], loading: true };
 
     fetch('api/SampleData/WeatherForecasts')
       .then(response => response.json())
       .then(data => {
-        this.setState({ forecasts: data, loading: false });
+        this.setState({ guests: data, loading: false });
       });
   }
 
-  static renderForecastsTable(forecasts) {
+  static renderGuestsTable(guests) {
     return (
       <table className='table'>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
           </tr>
         </thead>
         <tbody>
-          {forecasts.map(forecast =>
+          {guests.map(forecast =>
             <tr key={forecast.dateFormatted}>
-              <td>{forecast.dateFormatted}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
+              <td>{forecast.firstName}</td>
+              <td>{forecast.lastName}</td>
+              <td>{forecast.address}</td>
             </tr>
           )}
         </tbody>
@@ -42,7 +40,7 @@ export class FetchData extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+      : FetchData.renderGuestsTable(this.state.guests);
 
     return (
       <div>
