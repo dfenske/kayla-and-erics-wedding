@@ -1,41 +1,33 @@
 ﻿import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Icon } from 'react-materialize';
 import './NavMenu.css';
 
 export class NavMenu extends Component {
-  displayName = NavMenu.name
-
   render() {
     return (
-      <Navbar inverse fixedTop fluid collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to={'/'}>kayla_and_erics_wedding</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to={'/'} exact>
-              <NavItem>
-                <Glyphicon glyph='home' /> Home
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to={'/counter'}>
-              <NavItem>
-                <Glyphicon glyph='education' /> Counter
-              </NavItem>
-            </LinkContainer>
-            <LinkContainer to={'/fetchdata'}>
-              <NavItem>
-                <Glyphicon glyph='th-list' /> Fetch data
-              </NavItem>
-            </LinkContainer>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <div className="nav">
+        <div className="mr-mrs" >
+          <img src="images/mr mrs.jpg" alt="logo" />
+        </div>
+        <nav>
+          <div className="nav-wrapper">
+            <a href="/" className="brand-logo">Kayla and Eric's Wedding</a>
+            <a href="/" data-target="mobile-demo" className="sidenav-trigger"><Icon>menu</Icon></a>
+            <ul className="right hide-on-med-and-down">
+              <li><a href="wedding">Our wedding</a></li>
+              <li><a href="registry">Registry</a></li>
+              <li><a href="rsvp">RSVP</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <ul className="sidenav" id="mobile-demo">
+          <li><img src="images/mr mrs.jpg" alt="logo" className="small-mr-mrs" /></li>
+          <li><a href="wedding">Our wedding</a></li>
+          <li><a href="registry">Registry</a></li>
+          <li><a href="rsvp">RSVP</a></li>
+        </ul>
+      </div>
     );
   }
 }

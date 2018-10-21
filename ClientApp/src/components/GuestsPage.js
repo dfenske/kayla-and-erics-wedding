@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-export class FetchData extends Component {
-  displayName = FetchData.name
+export class GuestsPage extends Component {
 
   constructor(props) {
     super(props);
     this.state = { guests: [], loading: true };
 
-    fetch('api/SampleData/WeatherForecasts')
+    fetch('api/guests/all')
       .then(response => response.json())
       .then(data => {
         this.setState({ guests: data, loading: false });
@@ -22,30 +21,33 @@ export class FetchData extends Component {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Address</th>
+            <th>Response</th>
+            <th>Number in Party</th>
           </tr>
         </thead>
         <tbody>
-          {guests.map(forecast =>
-            <tr key={forecast.dateFormatted}>
-              <td>{forecast.firstName}</td>
-              <td>{forecast.lastName}</td>
-              <td>{forecast.address}</td>
+          {guests.map(guest =>
+            <tr key={guest.dateFormatted}>
+              <td>{guest.firstName}</td>
+              <td>{guest.lastName}</td>
+              <td>{guest.address}</td>
+              <td>{guest.response === true ? 'Attending' : 'Will not attend'}</td>
+              <td>{guest.numInParty}</td>
             </tr>
           )}
         </tbody>
-      </table>
+        </table>
     );
   }
 
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchData.renderGuestsTable(this.state.guests);
+      : GuestsPage.renderGuestsTable(this.state.guests);
 
     return (
-      <div>
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+      <div className="content">
+        <h1>Guests</h1>
         {contents}
       </div>
     );
