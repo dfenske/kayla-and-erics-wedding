@@ -6,6 +6,8 @@ import { Counter } from './components/Counter';
 import { WeddingPage } from './components/WeddingPage';
 import { RSVPPage } from './components/RSVPPage';
 import { GuestsPage } from './components/GuestsPage';
+import { PhotosPage } from './components/PhotosPage';
+import { RegistryPage } from './components/RegistryPage';
 
 export default class App extends Component {
   render() {
@@ -16,6 +18,8 @@ export default class App extends Component {
         <Route path='/wedding' component={WeddingPage} />
         <Route path='/rsvp' component={RSVPPage} />
         <Route path='/guests' component={GuestsPage} />
+        <Route path='/photos' component={PhotosPage} />
+        <Route path='/registry' component={RegistryPage} />
       </Layout>
     );
   }
