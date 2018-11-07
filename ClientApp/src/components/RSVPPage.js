@@ -100,7 +100,7 @@ export class RSVPPage extends Component {
             </div>
 
             <div>
-              <button className="btn">Submit</button>
+              <button className="btn btn-success">Submit</button>
             </div>
           </form>
         </div>
