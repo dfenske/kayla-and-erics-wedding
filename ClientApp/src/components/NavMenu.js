@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { Navbar, Nav, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import './NavMenu.css';
 
 export const NavMenu = (props) => {
@@ -13,18 +13,18 @@ export const NavMenu = (props) => {
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav pullRight>
-        <MenuItem eventKey={1} href="/wedding">
+        <NavItem eventKey={1} href="/wedding">
           The Wedding
-        </MenuItem>
-        <MenuItem eventKey={2} href="/rsvp">
+        </NavItem>
+        <NavItem eventKey={2} href="/rsvp">
           RSVP
-        </MenuItem>
-        <MenuItem eventKey={2} href="/photos">
+        </NavItem>
+        <NavItem eventKey={2} href="/photos">
           Gallery
-        </MenuItem>
-        <MenuItem eventKey={2} href="/registry">
+        </NavItem>
+        <NavItem eventKey={2} href="/registry">
           Registry
-        </MenuItem>
+        </NavItem>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

@@ -6,13 +6,13 @@ export const PhotosPage = (props) => {
     <h1>Photo Gallery</h1>
     <Carousel>
       <Carousel.Item>
-        <img height="500px" src="/images/Eric  Kayla 008.jpg" />
+        <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 008.jpg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img height="500px" src="/images/Eric  Kayla 010.jpg" />
+        <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 010.jpg" />
       </Carousel.Item>
       <Carousel.Item>
-        <img height="500px" src="/images/Eric  Kayla 019.jpg" />
+        <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 019.jpg" />
       </Carousel.Item>
     </Carousel>;
   </div>

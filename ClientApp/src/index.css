@@ -20,6 +20,18 @@ h3 {
     font-family: 'Caveat';
     text-align: center;
 }
+
+input {
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+
+input.center {
+    text-align: center;
+    font-size: 24px;
+}
+
 .content {
     width: 80%;
     margin: 0 auto;
@@ -31,14 +43,20 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 1px;
 }
 
-form div input,
-form div select {
+.rsvp button {
+    font-size: 18px;
+}
+
+form,
+form input,
+form select,
+form button {
     width: 100%;
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
 .flex {
