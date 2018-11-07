@@ -26,15 +26,11 @@ namespace kayla_and_erics_wedding.Controllers
             {
                 List<Guest> guests = new List<Guest>();
                 Guest guest;
-                string sqlQuery = "SELECT TOP (5) "
+                string sqlQuery = "SELECT "
                     + "[ID]"
                     + ",[LastName]"
                     + ",[FirstName]"
-                    + ",[Address]"
-                    + ",[Email]"
-                    + ",[Response]"
-                    + ",[NumInParty]"
-                    + " FROM[master].[dbo].[Guests]";
+                    + " FROM [dbo].[Guest]";
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -50,10 +46,6 @@ namespace kayla_and_erics_wedding.Controllers
                         guest.ID = int.Parse(reader["ID"].ToString());
                         guest.LastName = reader["LastName"].ToString();
                         guest.FirstName = reader["FirstName"].ToString();
-                        guest.Address = reader["Address"].ToString();
-                        guest.Email = reader["Email"].ToString();
-                        guest.Response = reader["Response"].ToString();
-                        guest.NumInParty = int.Parse(reader["NumInParty"].ToString());
 
                         guests.Add(guest); //Place the dictionary into the list
                     }
@@ -86,10 +78,6 @@ namespace kayla_and_erics_wedding.Controllers
             public int ID { get; internal set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
-            public string Address { get; set; }
-            public string Email { get; set; }
-            public string Response { get; set; }
-            public int NumInParty { get; set; }
         }
     }
 }

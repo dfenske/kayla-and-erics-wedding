@@ -12,16 +12,16 @@ export class RSVPPage extends Component {
       fetch("api/guests/all")
     ])
     .then(([res1, res2]) => Promise.all([res1, res2.json()]))
-    .then(([data1, data2]) => {
+    .then(([storageResult, fetchResult]) => {
       this.setState({
-        cookie: data1,
-        guests: data2,
+        cookie: storageResult,
+        guests: fetchResult,
         loading: false
     })});
   };
 
   submit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     storage.setItem('rsvpcode', this.state.code)
       .then(() => {
         this.setState({ cookie: this.state.code });
