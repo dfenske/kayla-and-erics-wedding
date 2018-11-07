@@ -9,13 +9,6 @@ html * {
     font-family: "Caveat";
 }
 
-@media (max-width: 767px) {
-    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
-    body {
-        padding-top: 50px;
-    }
-}
-
 
 body {
     margin-bottom: 30px;
@@ -33,9 +26,20 @@ h3 {
     margin-top: 10px;
 }
 
-    .content.narrow {
-        width: 50%;
-    }
+.rsvp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+form div input,
+form div select {
+    width: 100%;
+    margin-bottom: 15px;
+}
 
 .flex {
     display: flex;
@@ -87,8 +91,3 @@ h3 {
         height: 250px;
         margin: 10px;
     }
-
-.carousel-item {
-    display: flex;
-    align-items: center;
-}

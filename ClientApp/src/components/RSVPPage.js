@@ -31,8 +31,8 @@ export class RSVPPage extends Component {
       : this.renderSelect();
 
     return (
-      <div className="content narrow">
-        <h2>RSVP</h2>
+      <div className="content rsvp">
+        <h1>RSVP</h1>
         <form>
           <div>Your Name</div>
           <div>
