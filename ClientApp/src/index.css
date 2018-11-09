@@ -39,6 +39,10 @@ input.center {
     margin-top: 10px;
 }
 
+    .content.narrow {
+        width: 60%;
+    }
+
 .rsvp {
     display: flex;
     justify-content: center;
@@ -77,6 +81,12 @@ form button {
 @media (max-width: 781px) {
     .page-title {
         font-size: 48px;
+    }
+    .content,
+    .content.narrow {
+        width: 100%;
+        padding: 20px;
+        font-size: 20px;
     }
 }
 
@@ -126,11 +136,47 @@ form button {
     justify-content: center;
 }
 .radio label,
-.radio input[type="radio"] {
+.radio div {
     flex: 1;
-    position: relative;
     text-align: center;
 }
 .loading {
     font-size: 24px;
 }
+.form-radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: #f1f1f1;
+    color: #666;
+    height: 25px;
+    width: 25px;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+}
+
+    .form-radio:checked::before {
+        position: absolute;
+        font: 13px/1 'Open Sans', sans-serif;
+        left: 9px;
+        top: 5px;
+        content: '\02143';
+        transform: rotate(40deg);
+    }
+
+    .form-radio:hover {
+        background-color: #dfd9d9;
+    }
+
+    .form-radio:checked {
+        background-color:#dfd9d9;
+    }
+
+label {
+    color: #666;
+    cursor: pointer;
+} 

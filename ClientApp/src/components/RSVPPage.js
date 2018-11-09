@@ -53,29 +53,34 @@ export class RSVPPage extends Component {
       return <RSVPCodeForm refreshPage={this.refreshPage} />;
     } else {
       return (
-        <div className="content rsvp">
+        <div className="content narrow rsvp">
           <h1>RSVP</h1>
           <form>
             <div>
-              <div>Will you be attending?</div>
               <div className="radio-headers">
                 <div>Name</div>
-                <div>Yes</div>
-                <div>No</div>
+                <div>Yes, I'll be there!</div>
+                <div>Unfortunately not</div>
               </div>
               {guests.map((g, i) => (
                 <div key={g.firstName + i} className="radio">
                   <label>{`${g.firstName} ${g.lastName}`}</label>
+                  <div>
                   <input
                     type="radio"
+                    className="form-radio"
                     name={`${g.firstName} ${g.lastName}`}
                     value="yes"
-                  />
+                    />
+                  </div>
+                  <div>
                   <input
                     type="radio"
+                    className="form-radio"
                     name={`${g.firstName} ${g.lastName}`}
                     value="no"
-                  />
+                    />
+                  </div>
                 </div>
               ))}
             </div>
