@@ -1,92 +1,88 @@
 ﻿import React, { Component } from "react";
+import RSVPCodeForm from "./RSVPCodeForm";
 import storage from "localforage";
+
 export class RSVPPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { guests: [], loading: true, cookie: '', code: ''};
+    this.state = { guests: [], loading: true, cookie: "" };
   }
 
   componentWillMount = () => {
-    Promise.all([
-      storage.getItem('rsvpcode'),
-      fetch("api/guests/all")
-    ])
-    .then(([res1, res2]) => Promise.all([res1, res2.json()]))
-    .then(([storageResult, fetchResult]) => {
-      this.setState({
-        cookie: storageResult,
-        guests: fetchResult,
-        loading: false
-    })});
-  };
-
-  submit = (e) => {
-    e.preventDefault(); 
-    storage.setItem('rsvpcode', this.state.code)
-      .then(() => {
-        this.setState({ cookie: this.state.code });
-      });
-  }
-
-  changeCode = (e) => {
-    this.setState({
-      code: e.target.value
+    storage.getItem("rsvpcode").then(code => {
+      fetch(`api/guests/${code}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            console.log(`${code} is a valid code, setting cookie`);
+            // set cookie
+            this.setState({
+              loading: false,
+              cookie: code,
+              guests: data
+            });
+          } else {
+            console.log("not a valid code");
+            this.setState({
+              loading: false
+            });
+          }
+        });
     });
-  }
-  renderSelect = () => {
-    return (
-      <select>
-        {this.state.guests.map(g => (
-          <option key={g.firstName} value={g.firstName}>
-            {g.firstName} {g.lastName}
-          </option>
-        ))}
-      </select>
-    );
   };
 
-  render() {
-    const { cookie } = this.state;
+  refreshPage = () => {
+    storage.getItem("rsvpcode")
+      .then(cookie => {
+        fetch(`api/guests/${cookie}`)
+        .then(res => res.json())
+        .then(guests => {
+          this.setState({
+            cookie,
+            guests,
+            loading: false
+          });
+        });
+      });
+  };
 
-    let select = this.state.loading ? (
-      <p>
-        <em>Loading...</em>
-      </p>
-    ) : (
-      this.renderSelect()
-    );
+  renderPage = () => {
+    const { cookie, guests } = this.state;
 
-    if (cookie) {
+    if (!cookie) {
+      return <RSVPCodeForm refreshPage={this.refreshPage} />;
+    } else {
       return (
         <div className="content rsvp">
           <h1>RSVP</h1>
           <form>
-            <div>Your Name</div>
-            <div>{select}</div>
-
-            <div>Are you able to attend?</div>
-            <div className="switch">
-              <label>
-                Unfortunately, no
-                <input defaultChecked={true} type="checkbox" />
-                <span className="lever" />
-                Yes, I'll be there!
-              </label>
+            <div>
+              <div>Will you be attending?</div>
+              <div className="radio-headers">
+                <div>Name</div>
+                <div>Yes</div>
+                <div>No</div>
+              </div>
+              {guests.map((g, i) => (
+                <div key={g.firstName + i} className="radio">
+                  <label>{`${g.firstName} ${g.lastName}`}</label>
+                  <input
+                    type="radio"
+                    name={`${g.firstName} ${g.lastName}`}
+                    value="yes"
+                  />
+                  <input
+                    type="radio"
+                    name={`${g.firstName} ${g.lastName}`}
+                    value="no"
+                  />
+                </div>
+              ))}
             </div>
 
             <div>Email Address</div>
             <div>
-              <input type="email" />
-            </div>
-
-            <div>Phone Number</div>
-            <div>
-              <input type="tel" placeholder="(xxx) xxx-xxxx" />
-            </div>
-
-            <div>Notes</div>
-            <div>
-              <input />
+              <input type="email" placeholder={guests[0].email} />
             </div>
 
             <div>Any dietary restrictions?</div>
@@ -99,27 +95,29 @@ export class RSVPPage extends Component {
               <input />
             </div>
 
+            <div>Notes</div>
+            <div>
+              <input />
+            </div>
+
             <div>
               <button className="btn btn-success">Submit</button>
             </div>
           </form>
         </div>
       );
-    } else {
-      return (
-        <div className="content rsvp">
-          <h1>RSVP</h1>
-          <div>
-            <form>
-              <div>
-                Please enter your RSVP code (find it on your invitation)
-              </div>
-              <input className="center" onChange={this.changeCode} />
-              <button onClick={this.submit} className="btn btn-info">Submit</button>
-            </form>
-          </div>
-        </div>
-      );
     }
+  };
+
+  render() {
+    const { loading } = this.state;
+
+    return loading ? (
+      <div className="content flex">
+        Loading...
+      </div>
+    ) : (
+      this.renderPage()
+    );
   }
 }
