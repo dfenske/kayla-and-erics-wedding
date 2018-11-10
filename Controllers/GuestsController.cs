@@ -44,6 +44,8 @@ namespace kayla_and_erics_wedding.Controllers
                         guest.ID = int.Parse(reader["ID"].ToString());
                         guest.LastName = reader["LastName"].ToString();
                         guest.FirstName = reader["FirstName"].ToString();
+                        guest.WillAttend = reader["WillAttend"] == DBNull.Value ? null : (bool?)reader["WillAttend"];
+                        guest.Email = reader["Email"].ToString();
 
                         guests.Add(guest); //Place the dictionary into the list
                     }
@@ -91,6 +93,7 @@ namespace kayla_and_erics_wedding.Controllers
                         guest.ID = int.Parse(reader["ID"].ToString());
                         guest.LastName = reader["LastName"].ToString();
                         guest.FirstName = reader["FirstName"].ToString();
+                        guest.WillAttend = (bool)reader["WillAttend"];
 
                         guests.Add(guest); //Place the dictionary into the list
                     }
@@ -115,6 +118,8 @@ namespace kayla_and_erics_wedding.Controllers
             public int ID { get; internal set; }
             public string LastName { get; set; }
             public string FirstName { get; set; }
+            public bool? WillAttend { get; set; }
+            public string Email { get; set; }
         }
     }
 }

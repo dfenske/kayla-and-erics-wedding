@@ -61,6 +61,7 @@ export class RSVPPage extends Component {
                 <div>Name</div>
                 <div>Yes, I'll be there!</div>
                 <div>Unfortunately not</div>
+                <div>Email (optional)</div>
               </div>
               {guests.map((g, i) => (
                 <div key={g.firstName + i} className="radio">
@@ -71,6 +72,7 @@ export class RSVPPage extends Component {
                     className="form-radio"
                     name={`${g.firstName} ${g.lastName}`}
                     value="yes"
+                    checked={g.willAttend === true}
                     />
                   </div>
                   <div>
@@ -79,15 +81,19 @@ export class RSVPPage extends Component {
                     className="form-radio"
                     name={`${g.firstName} ${g.lastName}`}
                     value="no"
+                    checked={g.willAttend === false}
+                    />
+                  </div>
+                  <div>
+                  <input
+                    type="text"
+                    className="form-text"
+                    name="email"
+                    value={`${g.email}`}
                     />
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div>Email Address</div>
-            <div>
-              <input type="email" placeholder={guests[0].email} />
             </div>
 
             <div>Any dietary restrictions?</div>
@@ -100,9 +106,9 @@ export class RSVPPage extends Component {
               <input />
             </div>
 
-            <div>Notes</div>
+            <div>A message to the happy couple</div>
             <div>
-              <input />
+              <textarea name="notes" rows="4"></textarea>
             </div>
 
             <div>
