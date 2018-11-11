@@ -55,6 +55,7 @@ export default class RSVPCodeForm extends React.Component {
             </div>
             <input className="center" onChange={this.changeCode} />
             <button onClick={this.submit} className="btn btn-info">Submit</button>
+            <div className="forgot-link"><a href="/">Forgot your code?</a></div>
           </form>
         </div>
       </div>

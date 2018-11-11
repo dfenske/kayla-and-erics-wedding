@@ -180,4 +180,15 @@ form textarea {
 label {
     color: #666;
     cursor: pointer;
-} 
+}
+
+.forgot-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.send-btn {
+    margin-top: 20px;
+    font-size: 24px;
+}

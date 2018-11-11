@@ -26,6 +26,9 @@ export const NavMenu = props => {
           <LinkContainer to="/registry">
             <NavItem>Registry</NavItem>
           </LinkContainer>
+          <LinkContainer to="/contact">
+            <NavItem>Contact Us</NavItem>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -8,6 +8,7 @@ import { RSVPPage } from './components/RSVPPage';
 import { GuestsPage } from './components/GuestsPage';
 import { PhotosPage } from './components/PhotosPage';
 import { RegistryPage } from './components/RegistryPage';
+import { ContactPage } from './components/ContactPage';
 
 export default class App extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class App extends Component {
         <Route path='/guests' component={GuestsPage} />
         <Route path='/photos' component={PhotosPage} />
         <Route path='/registry' component={RegistryPage} />
+        <Route path='/contact' component={ContactPage} />
       </Layout>
     );
   }
