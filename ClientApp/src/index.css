@@ -177,6 +177,10 @@ form textarea {
         background-color:#dfd9d9;
     }
 
+.margin-top {
+    margin-top: 20px;
+}
+
 label {
     color: #666;
     cursor: pointer;
@@ -185,6 +189,10 @@ label {
 .forgot-link {
     text-align: center;
     margin-top: 20px;
+    font-size: 18px;
+}
+
+.form-control {
     font-size: 18px;
 }
 
