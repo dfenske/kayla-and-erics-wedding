@@ -46,6 +46,9 @@ namespace kayla_and_erics_wedding.Controllers
                         guest.FirstName = reader["FirstName"].ToString();
                         guest.WillAttend = reader["WillAttend"] == DBNull.Value ? null : (bool?)reader["WillAttend"];
                         guest.Email = reader["Email"].ToString();
+                        guest.EOrK = reader["EorK"].ToString();
+                        guest.RsvpCode = reader["RsvpCode"].ToString();
+                        guest.FullName = reader["FullName"].ToString();
 
                         guests.Add(guest); //Place the dictionary into the list
                     }
@@ -73,10 +76,7 @@ namespace kayla_and_erics_wedding.Controllers
             {
                 List<Guest> guests = new List<Guest>();
                 Guest guest;
-                string sqlQuery = "SELECT "
-                    + "[ID]"
-                    + ",[LastName]"
-                    + ",[FirstName]"
+                string sqlQuery = "SELECT *"
                     + " FROM [dbo].[Guest]";
 
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -93,7 +93,11 @@ namespace kayla_and_erics_wedding.Controllers
                         guest.ID = int.Parse(reader["ID"].ToString());
                         guest.LastName = reader["LastName"].ToString();
                         guest.FirstName = reader["FirstName"].ToString();
-                        guest.WillAttend = (bool)reader["WillAttend"];
+                        guest.WillAttend = reader["WillAttend"] == DBNull.Value ? null : (bool?)reader["WillAttend"];
+                        guest.Email = reader["Email"].ToString();
+                        guest.EOrK = reader["EorK"].ToString();
+                        guest.RsvpCode = reader["RsvpCode"].ToString();
+                        guest.FullName = reader["FullName"].ToString();
 
                         guests.Add(guest); //Place the dictionary into the list
                     }
@@ -120,6 +124,9 @@ namespace kayla_and_erics_wedding.Controllers
             public string FirstName { get; set; }
             public bool? WillAttend { get; set; }
             public string Email { get; set; }
+            public string EOrK { get; set; }
+            public string RsvpCode { get; set; }
+            public string FullName { get; set; }
         }
     }
 }

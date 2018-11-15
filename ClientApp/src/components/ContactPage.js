@@ -1,5 +1,4 @@
 import React from "react";
-import storage from "localforage";
 
 export class ContactPage extends React.Component {
   constructor(props) {

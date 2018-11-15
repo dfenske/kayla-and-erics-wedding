@@ -5,7 +5,7 @@ import storage from "localforage";
 export class RSVPPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { guests: [], loading: true, cookie: "" };
+    this.state = { guests: [], loading: true, guestData: [], cookie: "", message: '', songRequest: '', diet: '' };
   }
 
   componentWillMount = () => {
@@ -46,6 +46,44 @@ export class RSVPPage extends Component {
       });
   };
 
+  changedDiet = (e) => {
+    this.setState({ diet: e.target.value });
+  }
+
+  changedSongRequest = (e) => {
+    this.setState({ songRequest: e.target.value });
+  }
+
+  changedMessage = (e) => {
+    this.setState({ message: e.target.value });
+  }
+
+  changedRadio = (guestId, response) => {
+    const { guestData } = this.state;
+    
+    // check if guestid already exists, overwrite
+    const index = guestData.findIndex(g => g.guestId === guestId);
+    if (index !== -1) {
+      guestData[index].response = response;
+    }
+
+    // otherwise, add
+    guestData.push({ guestId, response });
+
+    this.setState({ guestData });
+  }
+
+  changedEmail = (guestId, email) => {
+    const { guestData } = this.state;
+
+    // check if guestid already exists, overwrite
+
+    // otherwise, add
+    guestData.push({ guestId, email });
+
+    this.setState({ guestData });
+  }
+
   renderPage = () => {
     const { cookie, guests } = this.state;
 
@@ -68,28 +106,31 @@ export class RSVPPage extends Component {
                   <label>{`${g.firstName} ${g.lastName}`}</label>
                   <div>
                   <input
-                    type="radio"
-                    className="form-radio"
-                    name={`${g.firstName} ${g.lastName}`}
-                    value="yes"
-                    checked={g.willAttend === true}
+                      type="radio"
+                      className="form-radio"
+                      name={`${g.firstName} ${g.lastName}`}
+                      value="yes"
+                      onChange={() => this.changedRadio(g.id, "yes")}
+                      defaultChecked={g.willAttend === true}
                     />
                   </div>
                   <div>
                   <input
-                    type="radio"
-                    className="form-radio"
-                    name={`${g.firstName} ${g.lastName}`}
-                    value="no"
-                    checked={g.willAttend === false}
+                      type="radio"
+                      className="form-radio"
+                      name={`${g.firstName} ${g.lastName}`}
+                      value="no"
+                      onChange={() => this.changedRadio(g.id, "no")}
+                      defaultChecked={g.willAttend === false}
                     />
                   </div>
                   <div>
                   <input
-                    type="text"
-                    className="form-text"
-                    name="email"
-                    value={`${g.email}`}
+                      type="text"
+                      className="form-text"
+                      name="email"
+                      defaultValue={`${g.email}`}
+                      onChange={(e) => this.changedEmail(g.id, e.target.value)}
                     />
                   </div>
                 </div>
@@ -98,17 +139,17 @@ export class RSVPPage extends Component {
 
             <div>Any dietary restrictions?</div>
             <div>
-              <input placeholder="eg. gluten-free, vegan, allergic to nuts" />
+              <input placeholder="eg. gluten-free, vegan, allergic to nuts" onChange={this.changedDiet} />
             </div>
 
             <div>Song Request (title, artist)</div>
             <div>
-              <input />
+              <input onChange={this.changedSongRequest} />
             </div>
 
             <div>A message to the happy couple</div>
             <div>
-              <textarea name="notes" rows="4"></textarea>
+              <textarea name="notes" rows="4" onChange={this.changedMessage} ></textarea>
             </div>
 
             <div>
