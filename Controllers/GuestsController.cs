@@ -117,6 +117,126 @@ namespace kayla_and_erics_wedding.Controllers
             }
         }
 
+        [HttpPost("update")]
+        public Boolean UpdateGuests([FromBody]Data data)
+        {
+            using (SqlConnection connection = new SqlConnection(_configuration["SqlConnectionString"]))
+            {
+                try
+                {
+                    connection.Open();
+
+                    if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest) || !string.IsNullOrEmpty(data.Message))
+                    {
+                        // Write the notes to the Notes table
+                        var query = data.Diet != null ? $"Dietary = '{data.Diet}'" : "";
+                        if (!string.IsNullOrEmpty(data.SongRequest))
+                        {
+                            if (!string.IsNullOrEmpty(data.Diet))
+                            {
+                                query += ", ";
+                            }
+                            query += $"Songs = '{data.SongRequest}'";
+                        }
+                        if (!string.IsNullOrEmpty(data.Message))
+                        {
+                            if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest))
+                            {
+                                query += ", ";
+                            }
+                            query += $"Notes = '{data.Message}'";
+                        }
+                        var sqlQuery = ("UPDATE Notes"
+                        + $" SET {query}"
+                        + $" WHERE RsvpCode = '{data.Cookie}';");
+
+                        var command = new SqlCommand(sqlQuery, connection);
+                        var numRows = command.ExecuteNonQuery();
+
+                        if (numRows == 0)
+                        {
+                            query = "";
+                            var values = "";
+                            if (!string.IsNullOrEmpty(data.Diet))
+                            {
+                                query += "Dietary";
+                                values += $"'{data.Diet}'";
+                            }
+                            if (!string.IsNullOrEmpty(data.SongRequest))
+                            {
+                                if (!string.IsNullOrEmpty(data.Diet))
+                                {
+                                    query += ", ";
+                                    values += ", ";
+                                }
+                                query += "Songs";
+                                values += $"'{data.SongRequest}'";
+                            }
+                            if (!string.IsNullOrEmpty(data.Message))
+                            {
+                                if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest))
+                                {
+                                    query += ", ";
+                                    values += ", ";
+                                }
+                                query += "Notes";
+                                values += $"'{data.Message}'";
+                            }
+                            query += $", RsvpCode";
+                            values += $", '{data.Cookie}'";
+
+                            sqlQuery = $"INSERT INTO Notes({query}) VALUES ({values})";
+
+                            command = new SqlCommand(sqlQuery, connection);
+                            numRows = command.ExecuteNonQuery();
+                        }
+
+
+                    }
+                    // Write the guests to guest table
+                    foreach (var d in data.GuestData)
+                    {
+                        var query = d.Response != null ? $"WillAttend = '{(d.Response.Equals("no") ? 0 : 1)}'" : "";
+                        if (d.Email != null)
+                        {
+                            if (d.Response != null)
+                            {
+                                query += ", ";
+                            }
+                            query += $"Email = '{d.Email}'";
+                        };
+
+                        var sqlQuery = ("UPDATE Guest"
+                        + $" SET {query}"
+                        + $" WHERE ID = {d.GuestId};");
+
+                        var command = new SqlCommand(sqlQuery, connection);
+                        var numRows = command.ExecuteNonQuery();
+                    }
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    //If an exception occurs, write it to the console
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return true;
+        }
+
+        public class Data
+        {
+            public string Diet { get; set; }
+            public string SongRequest { get; set; }
+            public string Message { get; set; }
+            public List<ResponseData> GuestData { get; set; }
+            public string Cookie { get; set; }
+        }
+
         public class Guest
         {
             public int ID { get; internal set; }
@@ -127,6 +247,13 @@ namespace kayla_and_erics_wedding.Controllers
             public string EOrK { get; set; }
             public string RsvpCode { get; set; }
             public string FullName { get; set; }
+        }
+
+        public class ResponseData
+        {
+            public int GuestId { get; set; }
+            public string Email { get; set; }
+            public string Response { get; set; }
         }
     }
 }

@@ -174,7 +174,8 @@ form textarea {
     }
 
     .form-radio:checked {
-        background-color:#dfd9d9;
+        background-color:#72CB72;
+        color: white;
     }
 
 .margin-top {
@@ -232,4 +233,13 @@ table tr th {
     }
     .ReactTable.-striped .rt-tr.-odd {
         background-color: #F0F5FC !important;
+    }
+
+    .rsvp-message {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }

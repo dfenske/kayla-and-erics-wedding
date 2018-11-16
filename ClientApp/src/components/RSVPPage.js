@@ -92,12 +92,39 @@ export class RSVPPage extends Component {
     this.setState({ guestData: newGuestData });
   }
 
+  submit = (e) => {
+    e.preventDefault();
+
+    fetch('api/guests/update', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(data => data.json())
+    .then(res => {
+      this.setState({ success: res });
+    })
+  }
+
   renderPage = () => {
-    const { cookie, guests } = this.state;
+    const { cookie, guests, success } = this.state;
 
     if (!cookie) {
       return <RSVPCodeForm refreshPage={this.refreshPage} />;
-    } else {
+    } else if (success) {
+      return (
+        <div className="content narrow rsvp">
+          <h1>RSVP</h1>
+          <div className="rsvp-message">
+            <h3>Thank you!</h3>
+            <div>Your RSVP has been saved. You can update this at any time by visiting this page again.</div>
+          </div>
+        </div>
+      )
+    } {
       return (
         <div className="content narrow rsvp">
           <h1>RSVP</h1>
@@ -157,11 +184,11 @@ export class RSVPPage extends Component {
 
             <div>A message to the happy couple</div>
             <div>
-              <textarea name="notes" rows="4" onChange={this.changedMessage} ></textarea>
+              <textarea className="form-control" name="notes" rows="4" onChange={this.changedMessage} ></textarea>
             </div>
 
             <div>
-              <button className="btn btn-success">Submit</button>
+              <button className="btn btn-success" onClick={this.submit}>Submit</button>
             </div>
           </form>
         </div>
