@@ -79,11 +79,11 @@ export class GuestsPage extends Component {
               Header: "Response",
               id: "willAttend",
               accessor: g =>
-                g.willAttend ? (
+                g.willAttend === true ? (
                   <span style={{ color: "green" }}>{`\u2714`}</span>
-                ) : (
+                ) : g.willAttend === false ? (
                   <span style={{ color: "red" }}>{`\u2717`}</span>
-                )
+                ) : ''
             },
             {
               Header: "Email",
@@ -92,7 +92,7 @@ export class GuestsPage extends Component {
             {
               Header: "Whose",
               id: "eOrK",
-              accessor: g => (g.eOrK === "E" ? "Eric" : "Kayla")
+              accessor: g => (g.eOrK.startsWith("E") ? "Eric" : g.eOrK.startsWith("K") ? "Kayla" : "")
             }
           ]}
           defaultPageSize={100}

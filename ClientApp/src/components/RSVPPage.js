@@ -61,27 +61,35 @@ export class RSVPPage extends Component {
   changedRadio = (guestId, response) => {
     const { guestData } = this.state;
     
+    const newGuestData = JSON.parse(JSON.stringify(guestData));
+
     // check if guestid already exists, overwrite
-    const index = guestData.findIndex(g => g.guestId === guestId);
+    const index = newGuestData.findIndex(g => g.guestId === guestId);
     if (index !== -1) {
-      guestData[index].response = response;
+      newGuestData[index].response = response;
+    } else {
+      // otherwise, add
+      newGuestData.push({ guestId, response });
     }
 
-    // otherwise, add
-    guestData.push({ guestId, response });
-
-    this.setState({ guestData });
+    this.setState({ guestData: newGuestData });
   }
 
   changedEmail = (guestId, email) => {
     const { guestData } = this.state;
+    
+    const newGuestData = JSON.parse(JSON.stringify(guestData));
 
     // check if guestid already exists, overwrite
+    const index = newGuestData.findIndex(g => g.guestId === guestId);
+    if (index !== -1) {
+      newGuestData[index].email = email;
+    } else {
+      // otherwise, add
+      newGuestData.push({ guestId, email });
+    }
 
-    // otherwise, add
-    guestData.push({ guestId, email });
-
-    this.setState({ guestData });
+    this.setState({ guestData: newGuestData });
   }
 
   renderPage = () => {
