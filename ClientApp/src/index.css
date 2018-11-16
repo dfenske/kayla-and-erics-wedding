@@ -206,6 +206,7 @@ label {
     color: darkblue;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
     .totals div {
@@ -225,4 +226,10 @@ table tr th {
 
     .fa-sort:hover {
         color: gray;
+    }
+    .rt-resizable-header:focus {
+        outline: none;
+    }
+    .ReactTable.-striped .rt-tr.-odd {
+        background-color: #F0F5FC !important;
     }
