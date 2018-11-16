@@ -1,24 +1,59 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import ReactTable from "react-table";
-import 'react-table/react-table.css'
+import "react-table/react-table.css";
+import RSVPCodeForm from "./RSVPCodeForm";
+import storage from "localforage";
 
 export class GuestsPage extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       guests: [],
-      loading: true
+      loading: true,
+      cookie: ""
     };
+  }
 
-    fetch('api/guests/all')
+  componentWillMount = () => {
+    storage.getItem("rsvpcode").then(code => {
+      if (code === "fendan") {
+        this.setState({
+          cookie: code
+        },
+          () => this.fetch()
+        );
+      } else {
+        this.setState({
+          loading: false
+        });
+      }
+    });
+  };
+
+  refreshPage = () => {
+    storage.getItem("rsvpcode").then(cookie => {
+      if (cookie === "fendan") {
+        this.setState({
+          cookie
+        }, () => this.fetch()
+        );
+      } else {
+        this.setState({
+          loading: false
+        });
+      }
+    });
+  };
+
+  fetch = () => {
+    fetch("api/guests/all")
       .then(response => response.json())
       .then(data => {
         this.setState({ guests: data, loading: false });
       });
   }
 
-  renderGuestsTable = (guests) => {
+  renderGuestsTable = guests => {
     if (guests) {
       return (
         <ReactTable
@@ -43,7 +78,12 @@ export class GuestsPage extends Component {
             {
               Header: "Response",
               id: "willAttend",
-              accessor: g => g.willAttend ? <span style={{color: 'green'}}>{`\u2714`}</span> : <span style={{color: 'red'}}>{`\u2717`}</span>
+              accessor: g =>
+                g.willAttend ? (
+                  <span style={{ color: "green" }}>{`\u2714`}</span>
+                ) : (
+                  <span style={{ color: "red" }}>{`\u2717`}</span>
+                )
             },
             {
               Header: "Email",
@@ -52,7 +92,7 @@ export class GuestsPage extends Component {
             {
               Header: "Whose",
               id: "eOrK",
-              accessor: g => g.eOrK === 'E' ? 'Eric' : 'Kayla'
+              accessor: g => (g.eOrK === "E" ? "Eric" : "Kayla")
             }
           ]}
           defaultPageSize={100}
@@ -62,26 +102,45 @@ export class GuestsPage extends Component {
     } else {
       return null;
     }
-  }
+  };
 
   render() {
-    let table = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : this.renderGuestsTable(this.state.guests);
+    const { cookie } = this.state;
 
-    return (
-      <div className="content">
-        <h1>Guests</h1>
+    if (!cookie) {
+      return <RSVPCodeForm refreshPage={this.refreshPage} />;
+    } else {
+      let table = this.state.loading ? (
+        <p>
+          <em>Loading...</em>
+        </p>
+      ) : (
+        this.renderGuestsTable(this.state.guests)
+      );
 
-        {this.state.guests &&
-          <div className="totals">
-            <div>Total Attending: {this.state.guests.filter(g => g.willAttend).length}</div>
-            <div>Total Not Attending: {this.state.guests.filter(g => g.willAttend === false).length}</div>
-            <div>Total Unknown: {this.state.guests.filter(g => g.willAttend === null).length}</div>
-          </div>
-        }
-        {table}
-      </div>
-    );
+      return (
+        <div className="content">
+          <h1>Guests</h1>
+
+          {this.state.guests && (
+            <div className="totals">
+              <div>
+                Total Attending:{" "}
+                {this.state.guests.filter(g => g.willAttend).length}
+              </div>
+              <div>
+                Total Not Attending:{" "}
+                {this.state.guests.filter(g => g.willAttend === false).length}
+              </div>
+              <div>
+                Total Unknown:{" "}
+                {this.state.guests.filter(g => g.willAttend === null).length}
+              </div>
+            </div>
+          )}
+          {table}
+        </div>
+      );
+    }
   }
 }
