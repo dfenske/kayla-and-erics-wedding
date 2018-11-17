@@ -47,7 +47,7 @@ export class RegistryPage extends React.Component {
       return (
         <div className="content">
           <h1>Registry</h1>
-          <div>This is the registry page.</div>
+          <div>This is the registry page. Coming soon...</div>
         </div>
       );
     }

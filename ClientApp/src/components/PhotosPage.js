@@ -56,8 +56,41 @@ export class PhotosPage extends React.Component {
               <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 010.jpg" />
             </Carousel.Item>
             <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 047.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
               <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 019.jpg" />
             </Carousel.Item>
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 068.jpg" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/bostonsoccer.jpg" />
+            </Carousel.Item>    
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/bear.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/dressy.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/flowers.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/funny.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/kiss.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/cheek.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/soccer.jpg" />
+            </Carousel.Item>   
+            <Carousel.Item>
+              <img height="500px" alt="eric-kayla" src="/images/excited.jpg" />
+            </Carousel.Item>   
           </Carousel>
         </div>
       );
