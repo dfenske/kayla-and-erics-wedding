@@ -6,20 +6,29 @@
 }
 
 html * {
-    font-family: "Caveat";
+    font-family: "Montserrat";
 }
 
 
 body {
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Caveat';
     text-align: center;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+.navbar * {
+    font-family: 'Caveat';
 }
 
 input {
@@ -30,7 +39,7 @@ input {
 
 input.center {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase
 }
 
@@ -49,12 +58,12 @@ input.center {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 1px;
 }
 
 .rsvp button {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 form,
@@ -70,6 +79,13 @@ form textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .page-title {
@@ -88,7 +104,7 @@ form textarea {
     .content.narrow {
         width: 100%;
         padding: 20px;
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
@@ -248,6 +264,8 @@ table tr th {
         flex: 1;
         text-align: justify;
         padding-left: 30px;
+        font-size: 16px;
+        line-height: 1.5em;
     }
 
     .our-story__img {

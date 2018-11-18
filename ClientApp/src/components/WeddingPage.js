@@ -45,13 +45,15 @@ export class WeddingPage extends Component {
       return <RSVPCodeForm refreshPage={this.refreshPage} />;
     } else {
       return (
-        <div className="content">
+        <div className="content narrow">
           <h2>Location</h2>
           <p>Eric's mom is generously hosting the wedding at her home! Since there is limited space on the property for parking, below are instructions for where to park and how the shuttle system will work.</p>
           <h4>Parking</h4>
           <p>For folks driving to the wedding, there is ample parking in the Bueche's grocery store parking lot.</p>
-          <p>400 N. Ortonville, Rd.</p>
-          <p>Ortonville, MI 48462</p>
+          <div className="flex-column">
+            <p>400 N. Ortonville, Rd.</p>
+            <p>Ortonville, MI 48462</p>
+          </div>
           <p>We will have a scheduled shuttle leaving every 15 minutes from the parking lot to take guests to the house. In the evening, the shuttle will be available on demand to take guests back to theur cars.</p>
           <p>For guests staying in one of the below recommended accommodations we will schedule two shuttles to depart from the hotels and bring you to the wedding if you do not wish to rent a car.</p>
           <h2>Schedule</h2>
