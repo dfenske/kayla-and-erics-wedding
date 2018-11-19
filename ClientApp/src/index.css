@@ -1,69 +1,68 @@
 :root {
-    --primary: #014A81;
-    --secondary: #661349;
-    --tertiary: #3F165C;
-    --light: #EDD1DF;
+  --primary: #014a81;
+  --secondary: #661349;
+  --tertiary: #3f165c;
+  --light: #edd1df;
 }
 
 html * {
-    font-family: "Montserrat";
+  font-family: "Montserrat";
 }
 
-
 body {
-    margin-bottom: 30px;
-    font-size: 16px;
+  margin-bottom: 30px;
+  font-size: 16px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Caveat';
-    text-align: center;
+  font-family: "Caveat";
+  text-align: center;
 }
 
 h4 {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .navbar * {
-    font-family: 'Caveat';
+  font-family: "Caveat";
 }
 
 input {
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
 }
 
 input.center {
-    text-align: center;
-    font-size: 18px;
-    text-transform: uppercase
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .content {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
-    .content.narrow {
-        width: 60%;
-    }
+.content.narrow {
+  width: 60%;
+}
 
 .rsvp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 16px;
-    letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .rsvp button {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 form,
@@ -71,215 +70,230 @@ form input,
 form select,
 form button,
 form textarea {
-    width: 100%;
-    margin: 15px 0;
+  width: 100%;
+  margin: 15px 0;
 }
 
 .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .page-title {
-    font-size: 72px;
-    font-family: 'Tangerine', cursive;
-    color: white;
-    position: absolute;
-    margin-top: 15%;
+  font-size: 72px;
+  font-family: "Tangerine", cursive;
+  color: white;
+  position: absolute;
+  margin-top: 15%;
 }
 
 @media (max-width: 781px) {
-    .page-title {
-        font-size: 48px;
-    }
-    .content,
-    .content.narrow {
-        width: 100%;
-        padding: 20px;
-        font-size: 16px;
-    }
+  .page-title {
+    font-size: 48px;
+  }
+  .content,
+  .content.narrow {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 531px) {
-    .page-title {
-        font-size: 28px;
-    }
+  .page-title {
+    font-size: 28px;
+  }
 }
 
 .switch {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
-    .switch label {
-        font-size: 1em;
-        font-weight: normal;
-    }
+.switch label {
+  font-size: 1em;
+  font-weight: normal;
+}
 .photos {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-    .photos img {
-        height: 250px;
-        margin: 10px;
-    }
+.photos img {
+  height: 250px;
+  margin: 10px;
+}
 
 .radio-headers {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 .radio-headers div {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 .radio {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .radio label,
 .radio div {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 .loading {
-    font-size: 24px;
+  font-size: 24px;
 }
 .form-radio {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: inline-block;
-    position: relative;
-    background-color: #f1f1f1;
-    color: #666;
-    height: 25px;
-    width: 25px;
-    border: 0;
-    border-radius: 25px;
-    cursor: pointer;
-    outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #666;
+  height: 25px;
+  width: 25px;
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
 }
 
-    .form-radio:checked::before {
-        position: absolute;
-        font: 13px/1 'Open Sans', sans-serif;
-        left: 9px;
-        top: 5px;
-        content: '\02143';
-        transform: rotate(40deg);
-    }
+.form-radio:checked::before {
+  position: absolute;
+  font: 13px/1 "Open Sans", sans-serif;
+  left: 9px;
+  top: 5px;
+  content: "\02143";
+  transform: rotate(40deg);
+}
 
-    .form-radio:hover {
-        background-color: #dfd9d9;
-    }
+.form-radio:hover {
+  background-color: #dfd9d9;
+}
 
-    .form-radio:checked {
-        background-color:#72CB72;
-        color: white;
-    }
+.form-radio:checked {
+  background-color: #72cb72;
+  color: white;
+}
 
 .margin-top {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 label {
-    color: #666;
-    cursor: pointer;
+  color: #666;
+  cursor: pointer;
 }
 
 .forgot-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 .form-control {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .send-btn {
-    margin-top: 20px;
-    font-size: 24px;
+  margin-top: 20px;
+  font-size: 24px;
 }
 
 .totals {
-    font-size: 24px;
-    color: darkblue;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+  font-size: 24px;
+  color: darkblue;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-    .totals div {
-        flex: 1;
-    }
+.totals div {
+  flex: 1;
+}
 
 table tr th {
-    text-align: center;
+  text-align: center;
 }
 
 .fa-sort {
-    color: lightgray;
-    margin-left: 5px;
-    cursor: pointer;
-    font-size: 18px
+  color: lightgray;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-    .fa-sort:hover {
-        color: gray;
-    }
-    .rt-resizable-header:focus {
-        outline: none;
-    }
-    .ReactTable.-striped .rt-tr.-odd {
-        background-color: #F0F5FC !important;
-    }
+.fa-sort:hover {
+  color: gray;
+}
+.rt-resizable-header:focus {
+  outline: none;
+}
+.ReactTable.-striped .rt-tr.-odd {
+  background-color: #f0f5fc !important;
+}
 
-    .rsvp-message {
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
+.rsvp-message {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 
-    .our-story {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.our-story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
-    .our-story__content {
-        flex: 1;
-        text-align: justify;
-        padding-left: 30px;
-        font-size: 16px;
-        line-height: 1.5em;
-    }
+.content h2 {
+  margin-top: 0;
+}
 
-    .our-story__img {
-        flex: 2;
-    }
+.our-story__content {
+  flex: 1;
+  text-align: justify;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 1.5em;
+}
 
-    @media(max-width: 1240px) {
-        .our-story {
-            flex-direction: column;
-        }
+.our-story__img {
+  flex: 2;
+}
 
-        .our-story__content {
-            max-width: 750px;
-            margin-bottom: 15px;
-            padding: 0;
-        }
-    }
+@media (max-width: 1240px) {
+  .our-story {
+    flex-direction: column;
+  }
+
+  .our-story__content {
+    max-width: 750px;
+    margin-bottom: 15px;
+    padding: 0;
+    margin-top: 15px;
+  }
+}
+
+.glyphicon {
+  color: #aaa;
+}
+
+.ReactTable .rt-th,
+.ReactTable .rt-td {
+  white-space: unset !important;
+}

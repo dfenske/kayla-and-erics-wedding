@@ -9,6 +9,7 @@ import { GuestsPage } from './components/GuestsPage';
 import { PhotosPage } from './components/PhotosPage';
 import { RegistryPage } from './components/RegistryPage';
 import { ContactPage } from './components/ContactPage';
+import { NotesPage } from './components/NotesPage';
 
 export default class App extends Component {
   render() {
@@ -22,6 +23,7 @@ export default class App extends Component {
         <Route path='/photos' component={PhotosPage} />
         <Route path='/registry' component={RegistryPage} />
         <Route path='/contact' component={ContactPage} />
+        <Route path='/notes' component={NotesPage} />
       </Layout>
     );
   }

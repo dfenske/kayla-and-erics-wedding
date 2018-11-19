@@ -50,46 +50,46 @@ export class PhotosPage extends React.Component {
           <h1>Photo Gallery</h1>
           <Carousel>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 008.jpg" />
+              <img alt="eric-kayla" src="/images/Eric  Kayla 008.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 010.jpg" />
+              <img alt="eric-kayla" src="/images/Eric  Kayla 010.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 047.jpg" />
+              <img alt="eric-kayla" src="/images/Eric  Kayla 047.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 019.jpg" />
+              <img alt="eric-kayla" src="/images/Eric  Kayla 019.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/Eric  Kayla 068.jpg" />
+              <img alt="eric-kayla" src="/images/Eric  Kayla 068.jpg" />
             </Carousel.Item>
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/bostonsoccer.jpg" />
+              <img alt="eric-kayla" src="/images/bostonsoccer.jpg" />
             </Carousel.Item>    
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/bear.jpg" />
+              <img alt="eric-kayla" src="/images/bear.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/dressy.jpg" />
+              <img alt="eric-kayla" src="/images/dressy.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/flowers.jpg" />
+              <img alt="eric-kayla" src="/images/flowers.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/funny.jpg" />
+              <img alt="eric-kayla" src="/images/funny.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/kiss.jpg" />
+              <img alt="eric-kayla" src="/images/kiss.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/cheek.jpg" />
+              <img alt="eric-kayla" src="/images/cheek.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/soccer.jpg" />
+              <img alt="eric-kayla" src="/images/soccer.jpg" />
             </Carousel.Item>   
             <Carousel.Item>
-              <img height="500px" alt="eric-kayla" src="/images/excited.jpg" />
+              <img alt="eric-kayla" src="/images/excited.jpg" />
             </Carousel.Item>   
           </Carousel>
         </div>
@@ -102,7 +102,7 @@ export class PhotosPage extends React.Component {
 
     return loading ? (
       <div className="content flex loading">
-        Loading...
+        <i className="icon-animate-spin icon-spin" />
       </div>
     ) : (
       this.renderPage()

@@ -58,7 +58,7 @@ export class RegistryPage extends React.Component {
 
     return loading ? (
       <div className="content flex loading">
-        Loading...
+        <i className="icon-animate-spin icon-spin" />
       </div>
     ) : (
       this.renderPage()

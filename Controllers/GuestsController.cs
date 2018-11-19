@@ -227,6 +227,51 @@ namespace kayla_and_erics_wedding.Controllers
             }
             return true;
         }
+        [HttpGet("notes")]
+        public IEnumerable<Note> GetNotes()
+        {
+            using (SqlConnection connection = new SqlConnection(_configuration["SqlConnectionString"]))
+            {
+                List<Note> notes = new List<Note>();
+                Note note;
+                string sqlQuery = "SELECT *"
+                    + " FROM [dbo].[Notes]";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                try
+                {
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        note = new Note();
+                        note.ID = int.Parse(reader["ID"].ToString());
+                        note.Dietary = reader["Dietary"].ToString();
+                        note.Notes = reader["Notes"].ToString();
+                        note.Songs = reader["Songs"].ToString();
+                        note.RsvpCode = reader["RsvpCode"].ToString();
+                        
+                        notes.Add(note); //Place the dictionary into the list
+                    }
+
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    //If an exception occurs, write it to the console
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                return notes;
+            }
+        }
+
 
         public class Data
         {
@@ -255,5 +300,18 @@ namespace kayla_and_erics_wedding.Controllers
             public string Email { get; set; }
             public string Response { get; set; }
         }
+    }
+
+    public class Note
+    {
+        public Note()
+        {
+        }
+
+        public int ID { get; set; }
+        public string Dietary { get; set; }
+        public string Notes { get; set; }
+        public string Songs { get; set; }
+        public string RsvpCode { get; set; }
     }
 }

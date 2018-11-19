@@ -105,36 +105,36 @@ export class GuestsPage extends Component {
   };
 
   render() {
-    const { cookie } = this.state;
+    const { cookie, guests } = this.state;
 
     if (!cookie) {
       return <RSVPCodeForm refreshPage={this.refreshPage} />;
     } else {
       let table = this.state.loading ? (
         <p>
-          <em>Loading...</em>
+          <em><i className="icon-animate-spin icon-spin" /></em>
         </p>
       ) : (
-        this.renderGuestsTable(this.state.guests)
+        this.renderGuestsTable(guests)
       );
 
       return (
         <div className="content">
-          <h1>Guests</h1>
-
-          {this.state.guests && (
+          <a href="/notes">Notes page</a>
+          <hr />
+          {guests && (
             <div className="totals">
               <div>
                 Total Attending:{" "}
-                {this.state.guests.filter(g => g.willAttend).length}
+                {guests.filter(g => g.willAttend).length}
               </div>
               <div>
                 Total Not Attending:{" "}
-                {this.state.guests.filter(g => g.willAttend === false).length}
+                {guests.filter(g => g.willAttend === false).length}
               </div>
               <div>
                 Total Unknown:{" "}
-                {this.state.guests.filter(g => g.willAttend === null).length}
+                {guests.filter(g => g.willAttend === null).length}
               </div>
             </div>
           )}

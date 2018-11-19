@@ -172,17 +172,17 @@ export class RSVPPage extends Component {
               ))}
             </div>
 
-            <div>Any dietary restrictions?</div>
+            <div><i className="glyphicon glyphicon-apple"/> Any dietary restrictions?</div>
             <div>
               <input placeholder="eg. gluten-free, vegan, allergic to nuts" onChange={this.changedDiet} />
             </div>
 
-            <div>Song Request (title, artist)</div>
+            <div><i className="glyphicon glyphicon-music"/> If we only played one song at the reception, what would you want it to be?</div>
             <div>
-              <input onChange={this.changedSongRequest} />
+              <input onChange={this.changedSongRequest} placeholder="eg. Love Shack, The B-52's" />
             </div>
 
-            <div>A message to the happy couple</div>
+            <div><i className="glyphicon glyphicon-pencil"/> Anything else you want to let us know?</div>
             <div>
               <textarea className="form-control" name="notes" rows="4" onChange={this.changedMessage} ></textarea>
             </div>
@@ -201,7 +201,7 @@ export class RSVPPage extends Component {
 
     return loading ? (
       <div className="content flex">
-        Loading...
+        <i className="icon-animate-spin icon-spin" />
       </div>
     ) : (
       this.renderPage()
