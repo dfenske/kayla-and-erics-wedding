@@ -47,7 +47,16 @@ export class RegistryPage extends React.Component {
       return (
         <div className="content">
           <h1>Registry</h1>
-          <div>This is the registry page. Coming soon...</div>
+              <div>
+                  <p>We've been together a year or two,</p>
+                  <p>we don't really need anything new.</p>
+                  <p>Yet if a gift is your intention,</p>
+                  <p>we thought that we would mention,</p>
+                  <p>we'd love some pennies to put together,</p>
+                  <p>to save for our first home that we will treasure.</p>
+                  <p>And just remember, what means the most,</p>
+                  <p>is that you're with us to raise a toast!</p>
+              </div>
         </div>
       );
     }
