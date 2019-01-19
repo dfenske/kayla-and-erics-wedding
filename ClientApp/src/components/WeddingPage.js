@@ -49,7 +49,7 @@ export class WeddingPage extends Component {
           <h2><i className="glyphicon glyphicon-map-marker" /> Location</h2>
           <p>Eric's mom is generously hosting the wedding at her home! Since there is limited space on the property for parking, below are instructions for where to park and how the shuttle system will work.</p>
           <h4><i className="glyphicon glyphicon-road" /> Parking</h4>
-          <p>For folks driving to the wedding, there is ample parking in the Bueche's grocery store parking lot.</p>
+          <p>For folks driving to the wedding, there is ample parking in the Bueche's grocery store parking lot. If you need help arranging a ride, please let us know.</p>
           <div className="flex-column">
             <p>400 N. Ortonville, Rd.</p>
             <p>Ortonville, MI 48462</p>
@@ -64,9 +64,11 @@ export class WeddingPage extends Component {
           <p>7:45 dinner</p>
           <p>8:45 toasts</p>
           <p>9:00 cake cutting</p>
-          <p>9:15 dance floor opens</p>
-          <h2><i className="glyphicon glyphicon-plane" /> Transport</h2>
-          <p>Those flying to Michigan for the wedding, if you can find a flight into the Flint airport, it is much closer to Ortonville than the detroit airport. The drive from the Detroit airport up to Ortonville is about 1.5 hours, whereas from Flint it is about 20 minutes. </p>
+              <p>9:15 dance floor opens</p>
+          <h2><i className="glyphicon glyphicon-plane" /> Flights</h2>
+              <p>For those flying to Michigan, there are two options:</p>
+              <p><b>Flint/Bishop - FNT</b> airport is about 20 minutes from Ortonville, a nice small airport, and close to Grand Blanc where our recommended hotels are located.</p>
+              <p><b>Detroit - DTW</b> airport is an international hub with many non-stop flights. It is about 1 hour from Ortonville, but for those wishing to extend their stay or explore the city, this is a great option.</p>
           <h2><i className="glyphicon glyphicon-home" /> Guest Accommodations</h2>
           <p>Here are a couple suggested hotels that are between the Flint airport and the wedding location.</p>
           <ul>
