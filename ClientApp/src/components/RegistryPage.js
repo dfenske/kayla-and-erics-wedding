@@ -47,7 +47,7 @@ export class RegistryPage extends React.Component {
       return (
         <div className="content">
           <h1>Registry</h1>
-              <div>
+              <div className="registry">
                   <p>We've been together a year or two,</p>
                   <p>we don't really need anything new.</p>
                   <p>Yet if a gift is your intention,</p>
