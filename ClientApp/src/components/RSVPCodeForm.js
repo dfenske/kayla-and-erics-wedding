@@ -53,8 +53,10 @@ export default class RSVPCodeForm extends React.Component {
             <div>
               To access this page, please enter the RSVP code - you can find this code on your invitation.
             </div>
-            <input className="center" onChange={this.changeCode} />
-            <button onClick={this.submit} className="btn btn-info">Submit</button>
+            <div className="rsvp-inputs">
+              <input className="center" onChange={this.changeCode} />
+              <button onClick={this.submit} className="btn btn-info">Submit</button>
+            </div>
             <div className="forgot-link"><a href="/contact">Forgot your code? Send us a message</a></div>
           </form>
         </div>

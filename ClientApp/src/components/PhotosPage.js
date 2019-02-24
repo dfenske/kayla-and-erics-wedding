@@ -78,10 +78,7 @@ export class PhotosPage extends React.Component {
             </Carousel.Item>   
             <Carousel.Item>
               <img alt="eric-kayla" src="/images/funny.jpg" />
-            </Carousel.Item>   
-            <Carousel.Item>
-              <img alt="eric-kayla" src="/images/kiss.jpg" />
-            </Carousel.Item>   
+            </Carousel.Item>
             <Carousel.Item>
               <img alt="eric-kayla" src="/images/cheek.jpg" />
             </Carousel.Item>   

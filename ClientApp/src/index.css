@@ -141,12 +141,12 @@ form textarea {
   flex: 1;
   text-align: center;
 }
-.radio {
+.rsvp-row {
   display: flex;
   justify-content: center;
 }
-.radio label,
-.radio div {
+.rsvp-row label,
+.rsvp-row div {
   flex: 1;
   text-align: center;
 }
@@ -207,8 +207,9 @@ label {
 }
 
 .send-btn {
-  margin-top: 20px;
-  font-size: 24px;
+  font-size: 18px;
+  width: 250px;
+  margin: 20px auto;
 }
 
 .totals {
@@ -307,4 +308,14 @@ table tr th {
   border-bottom: 1px solid #ececec;
   padding-bottom: 20px;
   margin-bottom: 20px;
+}
+
+.rsvp-inputs {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.radio-headers div.wide,
+.rsvp-row .wide {
+  flex: 2;
 }

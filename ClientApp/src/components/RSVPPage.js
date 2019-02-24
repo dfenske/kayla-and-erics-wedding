@@ -134,10 +134,10 @@ export class RSVPPage extends Component {
                 <div>Name</div>
                 <div>Yes, I'll be there!</div>
                 <div>Unfortunately not</div>
-                <div>Email (optional)</div>
+                <div className="wide">Email (optional)</div>
               </div>
               {guests.map((g, i) => (
-                <div key={g.firstName + i} className="radio">
+                <div key={g.firstName + i} className="rsvp-row">
                   <label>{`${g.firstName} ${g.lastName}`}</label>
                   <div>
                   <input
@@ -159,10 +159,10 @@ export class RSVPPage extends Component {
                       defaultChecked={g.willAttend === false}
                     />
                   </div>
-                  <div>
+                  <div className="wide">
                   <input
                       type="text"
-                      className="form-text"
+                      className=" form-text"
                       name="email"
                       defaultValue={`${g.email}`}
                       onChange={(e) => this.changedEmail(g.id, e.target.value)}
