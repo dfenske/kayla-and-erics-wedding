@@ -46,9 +46,9 @@ export class WeddingPage extends Component {
     } else {
       return (
           <div className="content narrow">
-          <div className="wedding-section">
-            <p>We are so incredibly happy and blessed to have such wonderful family and friends to celebrate our special moment with us. For those of you who are coming from out of state or country, we completely understand how difficult it can be to make a trip like this for a short weekend. We hope that the details below will help make the journey easier and more enjoyable for you! If you have any questions that we didn't cover, please do not hesitate to contact us.</p>
-          </div>
+          <h4 className="wedding-section">
+            We are so incredibly happy and blessed to have such wonderful family and friends to celebrate our special moment with us. For those of you who are coming from out of state or country, we completely understand how difficult it can be to make a trip like this for a short weekend. We hope that the details below will help make the journey easier and more enjoyable for you! If you have any questions that we didn't cover, please do not hesitate to contact us.
+          </h4>
           <div className="wedding-section">
             <h2>Location</h2>
             <p>Eric's mom is generously hosting the wedding at her home! The ceremony and reception will be in the backyard, so please dress accordingly (footwear for grass, a sweater when it cools down in the evening, etc.) Since there is limited space on the property for parking, below are instructions for where to park and how the shuttle system will work.</p>
