@@ -16,7 +16,7 @@ export class NotesPage extends Component {
 
   componentWillMount = () => {
     storage.getItem("rsvpcode").then(code => {
-      if (code === "fendan") {
+      if (code.toUpperCase() === "FENDAN") {
         this.setState({
           cookie: code
         },
@@ -32,7 +32,7 @@ export class NotesPage extends Component {
 
   refreshPage = () => {
     storage.getItem("rsvpcode").then(cookie => {
-      if (cookie === "fendan") {
+      if (cookie.toUpperCase() === "FENDAN") {
         this.setState({
           cookie
         }, () => this.fetch()
