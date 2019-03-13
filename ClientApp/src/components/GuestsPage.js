@@ -20,7 +20,7 @@ export class GuestsPage extends Component {
         this.setState({
           cookie: code
         },
-          () => this.fetch()
+          () => this.getGuests()
         );
       } else {
         this.setState({
@@ -35,7 +35,7 @@ export class GuestsPage extends Component {
       if (cookie === "fendan") {
         this.setState({
           cookie
-        }, () => this.fetch()
+        }, () => this.getGuests()
         );
       } else {
         this.setState({
@@ -45,7 +45,7 @@ export class GuestsPage extends Component {
     });
   };
 
-  fetch = () => {
+  getGuests = () => {
     fetch("api/guests/all")
       .then(response => response.json())
       .then(data => {

@@ -319,3 +319,7 @@ table tr th {
 .rsvp-row .wide {
   flex: 2;
 }
+
+.center {
+    text-align: center;
+}

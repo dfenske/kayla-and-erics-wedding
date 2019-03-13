@@ -182,9 +182,9 @@ export class RSVPPage extends Component {
               <input onChange={this.changedSongRequest} placeholder="eg. Love Shack, The B-52's" />
             </div>
 
-            <div>Anything else you want to let us know?</div>
+            <div>If you are traveling to Michigan, where are you staying? If you don't know yet, please tell us later so we can arrange the shuttle. </div>
             <div>
-              <textarea className="form-control" name="notes" rows="4" onChange={this.changedMessage} ></textarea>
+              <textarea className="form-control" name="notes" rows="4" placeholder="...or anything else you want us to know?" onChange={this.changedMessage} ></textarea>
             </div>
 
             <div>

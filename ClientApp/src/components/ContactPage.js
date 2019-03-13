@@ -22,20 +22,14 @@ export class ContactPage extends React.Component {
     const { subject, from, message } = this.state;
 
     return (
-      <div className="content narrow">
+      <div className="content narrow center">
         <h2>Contact Us</h2>
         <div className="margin-top">
-          <div>From:<span style={{ color: 'red' }}>*</span></div>
-          <input onChange={this.onChangeFrom} className="form-control" />
-        </div>
-        <div className="margin-top">
-          <div>Subject:<span style={{ color: 'red' }}>*</span></div>
-          <input onChange={this.onChangeSubject} className="form-control" />
-        </div>
-        <div className="margin-top">
-          <div>Message:<span style={{ color: 'red' }}>*</span></div>
-          <textarea onChange={this.onChangeMessage} className="form-control" />
-          <a href={`mailto:kayla.fenske@gmail.com?subject=From ${from}: ${subject}&body=${message}`} className="btn btn-success btn-block send-btn">Send</a>
+          If you have any questions, please email us.
+          
+          <div className="margin-top"> <strong><a href="mailto:kayla.fenske@gmail.com">kayla.fenske@gmail.com</a></strong></div>
+          <div className="margin-top"><strong><a href="mailto:ericmuzz@gmail.com">ericmuzz@gmail.com</a></strong></div>
+            
         </div>
       </div>
     );
