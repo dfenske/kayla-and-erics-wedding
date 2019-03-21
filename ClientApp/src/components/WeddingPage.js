@@ -51,7 +51,7 @@ export class WeddingPage extends Component {
           </h4>
           <div className="wedding-section">
             <h2>Location</h2>
-            <p>Eric's mom is generously hosting the wedding at her home! The ceremony and reception will be in the backyard, so please dress accordingly (footwear for grass, a sweater when it cools down in the evening, etc.) Since there is limited space on the property for parking, below are instructions for where to park and how the shuttle system will work.</p>
+            <p>Eric's mom is generously hosting the wedding at her home! The wedding will be cocktail attire. Please keep in mind, the ceremony and reception will be in the backyard, so leave the 4-inch heels at home and pack an extra layer ;-). Since there is limited space on the property for parking, below are instructions for where to park and how the shuttle system will work.</p>
           </div>
           <div className="wedding-section">
             <h2>Parking</h2>
@@ -66,17 +66,7 @@ export class WeddingPage extends Component {
           </div>
           <div className="wedding-section">
             <h2>Schedule</h2>
-            <ul>
-              <li>5:00 ceremony</li>
-              <li>5:30 cocktail hour</li>
-              <li>6:00 bridal party arrives</li>
-              <li>6:30 toasts</li>
-              <li>7:00 dinner</li>
-              <li>8:00 first dance</li>
-              <li>9:00 cake cutting</li>
-              <li>9:15 bouquet/garter toss</li>
-              <li>9:30 dance floor opens</li>
-            </ul>
+            <p>The ceremony will take place at 5pm. Cocktail hour and reception to follow!</p>
           </div>
           <div className="wedding-section">
             <h2>Flights</h2>
@@ -98,6 +88,7 @@ export class WeddingPage extends Component {
               <li><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/auburn-hills/dttbr/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-DTTBR">Holiday Inn Express & Suites Auburn Hills</a></li>
               <li><a href="https://hamptoninn3.hilton.com/en/hotels/michigan/hampton-inn-detroit-auburn-hills-north-great-lakes-crossing-area-DTTNAHX/index.html?SEO_id=GMB-HP-DTTNAHX">Hampton Inn Detroit/Auburn Hills-North (Great Lakes Crossing Area)</a></li>
             </ul>
+            <p>If you're looking for a homier option, there are a few AirBnB properties in the area (some even on a horse farm!). Also, there is an adorable bed and breakfast in nearby Clarkston: <a href="https://www.millpondinnbb.com/">Millpond B&B Inn</a></p>
           </div>
           <div className="wedding-section">
 
