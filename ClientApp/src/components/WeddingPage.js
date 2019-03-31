@@ -76,13 +76,13 @@ export class WeddingPage extends Component {
           </div>
           <div className="wedding-section">
             <h2>Guest Accommodations</h2>
-            <p>For those of you flying into Flint, the hotels below are a 10 minute drive from the airport.</p>
+            <p>For those of you flying into Flint, the hotels below are a 10 minute drive from the airport and a 20 minute drive to the wedding.</p>
             <ul>
               <li><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/grand-blanc/fntgb/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-FNTGB">Holiday Inn Express & Suites Grand Blanc</a></li>
               <li><a href="https://www.wyndhamhotels.com/wingate/grand-blanc-michigan/wingate-by-wyndham-flint-grand-blanc/overview?CID=LC:WG::GGL:RIO:National:10974&iata=00065402">Wingate by Wyndham Flint/Grand Blanc</a></li>
               <li><a href="https://www.choicehotels.com/michigan/grand-blanc/quality-inn-hotels/mi319?source=gyxt">Quality Inn</a></li>
             </ul>
-            <p>For those of you flying into Detroit, Auburn Hills is the closest town to Ortonville with chain hotels coming from the south. It is about a 25 minute drive to the wedding and an hour drive from the Detroit airport.</p>
+                  <p>For those of you flying into Detroit, Auburn Hills is the closest town to Ortonville with chain hotels coming from the south.  The hotels are about an hour drive from the Detroit airport and then a 25 minute drive to the wedding.</p>
             <ul>
               <li><a href="https://www.marriott.com/hotels/travel/dtwta-towneplace-suites-detroit-auburn-hills/">TownePlace Suites by Marriott</a></li>
               <li><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/auburn-hills/dttbr/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-DTTBR">Holiday Inn Express & Suites Auburn Hills</a></li>
@@ -92,7 +92,7 @@ export class WeddingPage extends Component {
           </div>
           <div className="wedding-section">
 
-            <h2>Where to Eat/Drink</h2>
+            <h2>Where to Eat/Drink near Ortonville</h2>
             <ul>
               <li><b>The Woodshop</b> is a nearby restaurant that Eric worked at for a time. It is known for its BBQ and wood fired pizzas. It also has a host of local beers on tap.</li>
               <li><b>Essence on Main</b> is a boutique shop and deli run by our close family friends. It is right next door to The Woodshop and is a great option for local food and gifts.</li>
