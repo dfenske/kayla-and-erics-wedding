@@ -1,11 +1,8 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
-using System.Data;
 
 namespace kayla_and_erics_wedding.Controllers
 {
@@ -128,70 +125,9 @@ namespace kayla_and_erics_wedding.Controllers
 
                     if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest) || !string.IsNullOrEmpty(data.Message))
                     {
-                        // Write the notes to the Notes table
-                        var query = data.Diet != null ? $"Dietary = '{data.Diet}'" : "";
-                        if (!string.IsNullOrEmpty(data.SongRequest))
-                        {
-                            if (!string.IsNullOrEmpty(data.Diet))
-                            {
-                                query += ", ";
-                            }
-                            query += $"Songs = '{data.SongRequest}'";
-                        }
-                        if (!string.IsNullOrEmpty(data.Message))
-                        {
-                            if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest))
-                            {
-                                query += ", ";
-                            }
-                            query += $"Notes = '{data.Message}'";
-                        }
-                        var sqlQuery = ("UPDATE Notes"
-                        + $" SET {query}"
-                        + $" WHERE RsvpCode = '{data.Cookie}';");
-
+                        var sqlQuery = ($"INSERT INTO Notes (Dietary, Notes, Songs, RsvpCode) Values ('{data.Diet}', '{data.Message}', '{data.SongRequest}', '{data.Cookie}')");
                         var command = new SqlCommand(sqlQuery, connection);
                         var numRows = command.ExecuteNonQuery();
-
-                        if (numRows == 0)
-                        {
-                            query = "";
-                            var values = "";
-                            if (!string.IsNullOrEmpty(data.Diet))
-                            {
-                                query += "Dietary";
-                                values += $"'{data.Diet}'";
-                            }
-                            if (!string.IsNullOrEmpty(data.SongRequest))
-                            {
-                                if (!string.IsNullOrEmpty(data.Diet))
-                                {
-                                    query += ", ";
-                                    values += ", ";
-                                }
-                                query += "Songs";
-                                values += $"'{data.SongRequest}'";
-                            }
-                            if (!string.IsNullOrEmpty(data.Message))
-                            {
-                                if (!string.IsNullOrEmpty(data.Diet) || !string.IsNullOrEmpty(data.SongRequest))
-                                {
-                                    query += ", ";
-                                    values += ", ";
-                                }
-                                query += "Notes";
-                                values += $"'{data.Message}'";
-                            }
-                            query += $", RsvpCode";
-                            values += $", '{data.Cookie}'";
-
-                            sqlQuery = $"INSERT INTO Notes({query}) VALUES ({values})";
-
-                            command = new SqlCommand(sqlQuery, connection);
-                            numRows = command.ExecuteNonQuery();
-                        }
-
-
                     }
                     // Write the guests to guest table
                     foreach (var d in data.GuestData)
@@ -253,7 +189,7 @@ namespace kayla_and_erics_wedding.Controllers
                         note.Notes = reader["Notes"].ToString();
                         note.Songs = reader["Songs"].ToString();
                         note.RsvpCode = reader["RsvpCode"].ToString();
-                        
+
                         notes.Add(note); //Place the dictionary into the list
                     }
 

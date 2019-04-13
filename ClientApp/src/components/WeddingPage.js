@@ -61,7 +61,7 @@ export class WeddingPage extends Component {
               <p>400 N. Ortonville, Rd.</p>
               <p>Ortonville, MI 48462</p>
             </div>
-            <p>We will have a scheduled shuttle leaving every 15 minutes from the parking lot to take guests to the house. In the evening, the shuttle will be available to take guests back to their cars.</p>
+            <p>We will have a shuttles running from 4 to 4:45 from the parking lot to take guests to the house. In the evening, the shuttle will be available to take guests back to their cars.</p>
             <p>Please let us know if you will be staying at one of the hotels listed below and would need a ride to the wedding, we will try to accommodate everyone as best we can.</p>
           </div>
           <div className="wedding-section">
