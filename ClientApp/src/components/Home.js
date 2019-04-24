@@ -6,7 +6,8 @@ export class Home extends Component {
   render() {
     return (
       <div className="content">
-        <h2>&#10043; September 21st, 2019 &#10043;</h2>
+        <div className="flourish"><img src="/images/flourish.png" /></div>
+        <h2 className="page-title">September 21st, 2019</h2>
         <div className="our-story">
           <div className="our-story__img">
             <img
@@ -15,8 +16,8 @@ export class Home extends Component {
               alt="erickayla"
             />
           </div>
-          <div className="our-story__content">
-            <h2>Our Story</h2>
+          <div className="our-story__content bordered">
+            <h2 className="page-title" >Our Story</h2>
             <p>
               For those of you that don't yet know our unique story, it began on
               Sept. 30, 2014 when Kayla walked into the downtown Seattle AT&T

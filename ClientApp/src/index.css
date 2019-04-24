@@ -6,7 +6,35 @@
 }
 
 html * {
-  font-family: "Montserrat";
+  font-family: "Handlee";
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.layout {
+  position: relative;
+}
+
+.background {
+  background-image: url('/images/wood.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.flourish {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flourish img {
+  width: 400px;
 }
 
 body {
@@ -18,7 +46,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Caveat";
+  font-family: "Handlee";
   text-align: center;
 }
 
@@ -27,7 +55,20 @@ h4 {
 }
 
 .navbar * {
-  font-family: "Caveat";
+  font-family: "Handlee";
+}
+
+.bordered {
+  background-color: #fff;
+  border: double maroon;
+  padding: 15px;
+}
+a {
+  color: darkred;
+}
+
+a:hover {
+  color: firebrick;
 }
 
 input {
@@ -46,6 +87,7 @@ input.center {
   width: 80%;
   margin: 0 auto;
   margin-top: 10px;
+  padding: 15px;
 }
 
 .content.narrow {
@@ -90,14 +132,11 @@ form textarea {
 .page-title {
   font-size: 72px;
   font-family: "Tangerine", cursive;
-  color: white;
-  position: absolute;
-  margin-top: 15%;
 }
 
 @media (max-width: 781px) {
   .page-title {
-    font-size: 48px;
+    font-size: 60px;
   }
   .content,
   .content.narrow {
@@ -109,7 +148,11 @@ form textarea {
 
 @media (max-width: 531px) {
   .page-title {
-    font-size: 28px;
+    font-size: 48px;
+  }
+
+  .flourish img {
+    width: 100%;
   }
 }
 
@@ -214,7 +257,7 @@ label {
 
 .totals {
   font-size: 24px;
-  color: darkblue;
+  color: maroon;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -268,9 +311,9 @@ table tr th {
 .our-story__content {
   flex: 1;
   text-align: justify;
-  padding-left: 30px;
   font-size: 16px;
   line-height: 1.5em;
+  margin-left: 30px;
 }
 
 .our-story__img {
@@ -284,9 +327,7 @@ table tr th {
 
   .our-story__content {
     max-width: 750px;
-    margin-bottom: 15px;
-    padding: 0;
-    margin-top: 15px;
+    margin: 15px;
   }
 }
 
@@ -305,7 +346,6 @@ table tr th {
 }
 
 .wedding-section {
-  border-bottom: 1px solid #ececec;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }

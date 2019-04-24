@@ -116,7 +116,7 @@ export class RSVPPage extends Component {
       return <RSVPCodeForm refreshPage={this.refreshPage} />;
     } else if (success) {
       return (
-        <div className="content narrow rsvp">
+        <div className="content narrow rsvp bordered">
           <h1>RSVP</h1>
           <div className="rsvp-message">
             <h3>Thank you!</h3>
@@ -126,8 +126,9 @@ export class RSVPPage extends Component {
       )
     } {
       return (
-        <div className="content narrow rsvp">
-          <h1>RSVP</h1>
+        <div className="content narrow rsvp bordered">
+          <div className="flourish"><img src="/images/flourish.png" /></div>
+          <h2 className="page-title">RSVP</h2>
           <form>
             <div>
               <div className="radio-headers">

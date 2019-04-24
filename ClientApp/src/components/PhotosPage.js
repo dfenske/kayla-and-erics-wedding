@@ -47,7 +47,8 @@ export class PhotosPage extends React.Component {
     } else {
       return (
         <div className="content">
-          <h1>Photo Gallery</h1>
+          <div className="flourish"><img src="/images/flourish.png" /></div>
+          <h2 className="page-title">Photo Gallery</h2>
           <Carousel>
             <Carousel.Item>
               <img alt="eric-kayla" src="/images/Eric  Kayla 008.jpg" />

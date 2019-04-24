@@ -5,9 +5,13 @@ import '../index.css';
 export class Layout extends Component {
   render() {
     return (
-      <div>
+      <div className="layout">
+      <div className="background">
+      </div>
+      <div className="page">
         <NavMenu />
         {this.props.children}
+      </div>
       </div>
     );
   }

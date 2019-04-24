@@ -22,8 +22,9 @@ export class ContactPage extends React.Component {
     const { subject, from, message } = this.state;
 
     return (
-      <div className="content narrow center">
-        <h2>Contact Us</h2>
+      <div className="content narrow center bordered">
+        <div className="flourish"><img src="/images/flourish.png" /></div>
+        <h2 className="page-title" >Contact Us</h2>
         <div className="margin-top">
           If you have any questions, please email us.
           

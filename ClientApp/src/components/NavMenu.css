@@ -1,6 +1,6 @@
 ﻿.navbar-inverse {
     background: white;
-    color: darkblue;
+    color: maroon;
     border: none;
     font-size: 24px;
     border-bottom: 1px solid #eee;
@@ -14,7 +14,7 @@
     border: none;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
-    background-color: darkblue;
+    background-color: maroon;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: #fff;
@@ -29,5 +29,5 @@
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a:focus,
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-    color: navy;
+    color: maroon;
 }
