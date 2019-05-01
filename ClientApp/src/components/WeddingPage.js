@@ -46,7 +46,7 @@ export class WeddingPage extends Component {
     } else {
       return (
           <div className="content narrow wedding">
-            <div className="flourish"><img src="/images/flourish.png" /></div>
+            <div className="leaves"><img src="/images/leaves.png" /></div>
           <h4 className="wedding-section bordered">
             We are so incredibly happy and blessed to have such wonderful family and friends to celebrate our special moment with us. For those of you who are coming from out of state or country, we completely understand how difficult it can be to make a trip like this for a short weekend. We hope that the details below will help make the journey easier and more enjoyable for you! If you have any questions that we didn't cover, please do not hesitate to contact us.
           </h4>

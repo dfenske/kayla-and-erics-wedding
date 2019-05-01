@@ -23,7 +23,7 @@ export class ContactPage extends React.Component {
 
     return (
       <div className="content narrow center bordered">
-        <div className="flourish"><img src="/images/flourish.png" /></div>
+        <div className="leaves"><img src="/images/leaves.png" /></div>
         <h2 className="page-title" >Contact Us</h2>
         <div className="margin-top">
           If you have any questions, please email us.

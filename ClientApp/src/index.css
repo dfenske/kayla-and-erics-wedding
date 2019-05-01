@@ -6,7 +6,7 @@
 }
 
 html * {
-  font-family: "Handlee";
+  font-family: "InkFree";
   line-height: 1.5;
   letter-spacing: 1px;
 }
@@ -15,25 +15,35 @@ html * {
   position: relative;
 }
 
+@font-face {
+    font-family: SegoeScript;
+    src: url('/fonts/segoesc.ttf');
+}
+
+@font-face {
+    font-family: InkFree;
+    src: url('/fonts/Inkfree.woff');
+}
+
 .background {
-  background-image: url('/images/wood.jpg');
+  background-image: url('/images/wood.png');
   background-repeat: repeat;
   background-size: auto;
   opacity: 0.2;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 500vw;
+  height: 500vh;
   z-index: -1;
 }
 
-.flourish {
+.leaves {
   margin: 0 auto;
   text-align: center;
 }
 
-.flourish img {
+.leaves img {
   width: 400px;
 }
 
@@ -46,7 +56,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Handlee";
+  font-family: "InkFree";
   text-align: center;
 }
 
@@ -55,7 +65,7 @@ h4 {
 }
 
 .navbar * {
-  font-family: "Handlee";
+  font-family: "InkFree";
 }
 
 .bordered {
@@ -130,8 +140,8 @@ form textarea {
 }
 
 .page-title {
-  font-size: 72px;
-  font-family: "Tangerine", cursive;
+    font-size: 72px;
+    font-family: "SegoeScript";
 }
 
 @media (max-width: 781px) {
@@ -151,7 +161,7 @@ form textarea {
     font-size: 48px;
   }
 
-  .flourish img {
+  .leaves img {
     width: 100%;
   }
 }
