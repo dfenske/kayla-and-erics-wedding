@@ -6,7 +6,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="content">
-        <div className="leaves"><img src="/images/Leaves+Heart.png" /></div>
+        <div className="leaves"><img src="/images/flourish.png" /></div>
         <h2 className="page-title">September 21st, 2019</h2>
         <div className="our-story">
           <div className="our-story__img">

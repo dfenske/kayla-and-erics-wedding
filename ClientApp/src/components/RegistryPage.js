@@ -46,7 +46,7 @@ export class RegistryPage extends React.Component {
     } else {
       return (
         <div className="content bordered narrow">
-          <div className="leaves"><img src="/images/Leaves+Heart.png" /></div>
+          <div className="leaves"><img src="/images/flourish.png" /></div>
           <h2 className="page-title">Registry</h2>
               <div className="registry">
                   <div>We've been together a year or two,</div>
