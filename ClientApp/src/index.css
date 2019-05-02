@@ -1,6 +1,6 @@
 :root {
-  --primary: #014a81;
-  --secondary: #661349;
+  --primary: #526b7f;
+  --secondary: #8F3A65;
   --tertiary: #3f165c;
   --light: #edd1df;
 }
@@ -26,7 +26,7 @@ html * {
 }
 
 .background {
-  background-image: url('/images/wood.png');
+  background-image: url('/images/wood.jpg');
   background-repeat: repeat;
   background-size: auto;
   opacity: 0.2;
@@ -69,9 +69,9 @@ h4 {
 }
 
 .bordered {
-  background-color: #fff;
-  border: double maroon;
-  padding: 15px;
+    background-color: #fff;
+    border: double #8F3A65;
+    padding: 15px;
 }
 a {
   color: darkred;
@@ -140,13 +140,15 @@ form textarea {
 }
 
 .page-title {
-    font-size: 72px;
+    font-size: 30px;
     font-family: "SegoeScript";
+    color: #8F3A65;
 }
 
 @media (max-width: 781px) {
   .page-title {
-    font-size: 60px;
+    font-size: 30px;
+    color: #8F3A65
   }
   .content,
   .content.narrow {
@@ -159,6 +161,7 @@ form textarea {
 @media (max-width: 531px) {
   .page-title {
     font-size: 48px;
+    color: #8F3A65;
   }
 
   .leaves img {

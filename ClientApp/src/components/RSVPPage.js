@@ -127,7 +127,7 @@ export class RSVPPage extends Component {
     } {
       return (
         <div className="content narrow rsvp bordered">
-          <div className="leaves"><img src="/images/leaves.png" /></div>
+          <div className="leaves"><img src="/images/Leaves+Heart.png" /></div>
           <h2 className="page-title">RSVP</h2>
           <form>
             <div>
